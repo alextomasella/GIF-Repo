@@ -15,6 +15,8 @@ async function getGifs() {
     }
 }
 
-const button = document.getElementById("fetch-gif-btn");
-const gifContainer = document.getElementById("gif-container");
-button.addEventListener("click", getGifs);
+const button = document.querySelector("#fetch-gif-btn");
+const gifContainer = document.querySelector("#gif-container");
+button.addEventListener("click", function() {
+    getGifs();
+});
