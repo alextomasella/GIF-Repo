@@ -7,7 +7,14 @@ async function getGifs() {
     const images = data.data.map(gif => gif.images.original.url);
     console.log(images);
 
-    const output = document.getElementById("gif-output");
+    const output = document.getElementById("gif-container");
     output.innerHTML = "";
+
+    for (let url of images) {
+        output.innerHTML += `<img src="${url}" class="col-3 mb-3">`;
+    }
 }
 
+const button = document.getElementById("fetch-gif-btn");
+const gifContainer = document.getElementById("gif-container");
+button.addEventListener("click", getGifs);
